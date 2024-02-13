@@ -153,9 +153,16 @@ Comprobación de que el push de la rama development se ha realizado correctament
     ```
 
 3. Si no hay conflictos, los cambios realizados en la rama "development" se incorporarán a la rama "main".
-
+    - Caso sin conflictos:
     ![Merge rama main y dev](./img/img14-merge%20ramas%20main%20y%20dev.png)
 
-4. Hax un push de los cambios al repositorio en GitHub.
+    - Caso con conflictos:
+      + En la consola saldrá un mensaje de error.
+    ![Mensaje de conflicto](./img/img17-%20msg%20conflicto.png)
+      + Desde el apartado Source Control de VSCode gestionamos el conflicto.
+    ![Resolución de conflicto](./img/img18-%20conflicto.png)
+    
+
+4. Haz un push de los cambios al repositorio en GitHub.
 
     ![Push merge](./img/img15-push%20merge.png)
