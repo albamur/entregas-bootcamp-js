@@ -1,0 +1,31 @@
+/*CONFIGURACIÓN PREVIA*/
+/*Fuentes importadas de google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+/*Constantes que se utilizarán en todo el documento*/
+:root {
+    --font-size-s: 14px;
+    --font-size-m: 16px;
+    --font-size-l: 28px;
+    --font-size-capitalize: 34px;
+
+    --color-black: #212429;
+    --color-white: #ffff;
+
+    --space-s: 8px;
+    --space-m: 16px;
+    --space-l: 32px;
+}
+
+/*Borrado de los estilos predeterminados del navegador*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+html {
+    font-size: 100%; /*16px*/
+}
