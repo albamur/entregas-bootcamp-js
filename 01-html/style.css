@@ -1,4 +1,4 @@
-/*CONFIGURACIÓN PREVIA*/
+/** CONFIGURACIÓN PREVIA */
 /*Fuentes importadas de google fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
@@ -28,4 +28,45 @@
 
 html {
     font-size: 100%; /*16px*/
+}
+
+
+/** HEADER */
+/*Fijado de la barra de navegación para que se mantenga al hacer scroll*/
+header {
+    position: fixed;
+    width: 100%;
+}
+
+nav {
+    padding: var(--space-m);
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-black);
+    font-size: var(--font-size-m);
+}
+
+.navbar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+/* Las opciones y secciones de la barra de navegación se encuentran ocultas en el tamaño actual*/
+.navbar-sections li,
+.navbar-options {
+    display: none;
+    list-style: none;
+}
+
+/*Borrado de los estilos predeterminados de los links*/
+.navbar-sections ul li a {
+    text-decoration: none;
+    color: #212429;
+}
+
+/* Decoraciones extras de funcionalidad */
+.navbar-sections li a:hover {
+    font-weight: bold;
 }
