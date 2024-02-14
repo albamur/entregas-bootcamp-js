@@ -188,7 +188,49 @@ footer {
 
 
 /** ESTILOS ESPECÍFICOS EN FUNCIÓN DEL ANCHO DE PANTALLA */
+/* Efecto de despliegue de la barra de navegación solo en la versión de móvil */
+@media (max-width: 650px) {
 
+    .navbar-sections ul li a:hover {
+        font-weight: bold;
+    }
+
+    .navbar-sections ul li a:hover,
+    .navbar-burguer img:hover,
+    .navbar-options img:hover {
+        cursor: pointer;
+    }
+
+    .navbar-container:hover li {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-container:hover .navbar-sections {
+        display: inline;
+    }
+
+    .navbar-container:hover .navbar-sections ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: var(--space-m);
+        padding: var(--space-m) 0px;
+    }
+
+    .navbar-container:hover .navbar-sections ul li {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-container:hover .navbar-options {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: var(--space-m);
+        gap: var(--font-size-l)
+    }
+}
 
 /* Estilos de la página para formato tablet */
 @media (min-width: 650px) {
