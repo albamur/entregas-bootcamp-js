@@ -1,9 +1,9 @@
 /** CONFIGURACIÓN PREVIA */
-/*Fuentes importadas de google fonts*/
+/* Fuentes importadas de google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
-/*Constantes que se utilizarán en todo el documento*/
+/* Constantes que se utilizarán en todo el documento */
 :root {
     --font-size-s: 14px;
     --font-size-m: 16px;
@@ -18,7 +18,7 @@
     --space-l: 32px;
 }
 
-/*Borrado de los estilos predeterminados del navegador*/
+/* Borrado de los estilos predeterminados del navegador */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -32,10 +32,11 @@ html {
 
 
 /** HEADER */
-/*Fijado de la barra de navegación para que se mantenga al hacer scroll*/
+/* Fijado de la barra de navegación para que se mantenga al hacer scroll */
 header {
     position: fixed;
     width: 100%;
+    z-index: 1;
 }
 
 nav {
@@ -60,7 +61,7 @@ nav {
     list-style: none;
 }
 
-/*Borrado de los estilos predeterminados de los links*/
+/* Borrado de los estilos predeterminados de los links */
 .navbar-sections ul li a {
     text-decoration: none;
     color: #212429;
@@ -69,4 +70,68 @@ nav {
 /* Decoraciones extras de funcionalidad */
 .navbar-sections li a:hover {
     font-weight: bold;
+}
+
+
+
+/** BODY PAGE **/
+.titulo {
+    padding: 80px var(--space-l) var(--space-l) var(--space-l);
+    font-size: var(--font-size-l);
+}
+
+/* Tamaño de la primera letra del titulo aumentado */
+.titulo::first-letter {
+    font-size: var(--font-size-capitalize);
+}
+
+
+/* Sección con display flex para centrar el contenedor de las tarjetas */
+.seccion-tarjetas {
+    margin-bottom: var(--space-m);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Contenedor con display grid para ordenar los artículos según el ancho de pantalla */
+.tarjetas-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    justify-items: center;
+}
+
+.tarjetas-container article {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.foto-tarjeta img {
+    border-radius: 10px;
+}
+
+.descripcion-tarjeta {
+    display: flex;
+    justify-content: space-between;
+}
+
+.descripcion-tarjeta p {
+    margin: 15px 10px 15px 10px;
+    font-size: var(--font-size-s);
+}
+
+.precio-articulo {
+    font-weight: bold;
+}
+
+
+/* Decoraciones extras de funcionalidad */
+.tarjetas-container>article:hover {
+    cursor: pointer;
+    transform: scale(1.05);
 }
