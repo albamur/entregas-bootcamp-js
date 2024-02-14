@@ -55,7 +55,7 @@ nav {
 }
 
 /* Las opciones y secciones de la barra de navegación se encuentran ocultas en el tamaño actual*/
-.navbar-sections li,
+.navbar-sections ul,
 .navbar-options {
     display: none;
     list-style: none;
@@ -70,6 +70,11 @@ nav {
 /* Decoraciones extras de funcionalidad */
 .navbar-sections li a:hover {
     font-weight: bold;
+}
+
+.navbar-options img:hover,
+.navbar-burguer img:hover {
+    transform: scale(1.1);
 }
 
 
@@ -178,4 +183,68 @@ footer {
 .elementos-footer>p:hover {
     font-weight: bold;
     cursor: pointer;
+}
+
+
+
+/** ESTILOS ESPECÍFICOS EN FUNCIÓN DEL ANCHO DE PANTALLA */
+
+
+/* Estilos de la página para formato tablet */
+@media (min-width: 650px) {
+    nav {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-container {
+        flex-direction: row;
+    }
+
+    .navbar-options {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--space-l);
+        font-size: var(--font-size-s);
+    }
+
+
+    .tarjetas-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Estilos de la página para formato tablet */
+@media (min-width: 920px) {
+    nav {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-container {
+        flex-direction: row;
+    }
+
+    .navbar-options,
+    .navbar-sections ul {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--space-l);
+        font-size: var(--font-size-s);
+    }
+
+    .tarjetas-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    .footer-container {
+        padding: var(--space-m) var(--space-l);
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .elementos-footer {
+        border-bottom: 0px solid var(--color-white);
+    }
 }
