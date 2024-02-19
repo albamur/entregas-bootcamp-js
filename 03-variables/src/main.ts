@@ -7,39 +7,44 @@ interface GrupoMusical {
     genero: string;
 }
 
+let generoPopRock = "🎵 Pop Rock"
+let generoRock = "🎸 Rock"
+let generoHardRock = "🤘 Hard Rock"
+let generoClassic = "🎼 Clásica"
+
 const grupo1: GrupoMusical = {
     nombre: "The Beatles",
     anyo: 1960,
     activo: true,
-    genero: "🎵 Pop Rock"
+    genero: generoPopRock
 }
 
 const grupo2: GrupoMusical = {
     nombre: "Queen",
     anyo: 1970,
     activo: false,
-    genero: "🎸 Rock"
+    genero: generoRock
 }
 
 const grupo3: GrupoMusical = {
     nombre: "AC DC",
     anyo: 1973,
     activo: true,
-    genero: "🤘 Hard Rock"
+    genero: generoHardRock
 }
 
 const grupo4: GrupoMusical = {
     nombre: "Ludwig van Beethoven",
     anyo: 1770,
     activo: false,
-    genero: "🎼 Clásica"
+    genero: generoClassic
 }
 
 const grupo5: GrupoMusical = {
     nombre: "The Rolling Stones",
     anyo: 1962,
     activo: true,
-    genero: "🎸 Rock"
+    genero: generoRock
 }
 
 const estiloTitulo = "color:green; font-size:16px; font-weight: bold;";
