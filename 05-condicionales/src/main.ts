@@ -196,19 +196,32 @@ const prfResultado = document.getElementById("resultado")
 const btnPlantarse = document.getElementById("plantarse")
 btnPlantarse?.addEventListener('click', plantarse)
 
-function plantarse() {
+type Resultado = 
+    | "Has sido muy conservador" 
+    | "Te ha entrado el canguelo eh?"
+    | "Casi"
+    | "¡Lo has clavado! ¡Enhorabuena!"
+    | "Número de carta indefinido";
+
+function plantarse(){
     gameOver()
 
-    if(prfResultado){
-        if(barajaJugador < 4){
-            prfResultado.innerHTML = "Has sido muy conservador"
-        } else if(barajaJugador ==  5){
-            prfResultado.innerHTML = "Te ha entrado el canguelo eh?"
-        } else if(barajaJugador ==  6 || barajaJugador ==  7){
-            prfResultado.innerHTML = "Te ha entrado el canguelo eh?"
-        } else if(barajaJugador ==  7.5){
-            prfResultado.innerHTML = "¡Lo has clavado! ¡Enhorabuena!"
-        }
+    if(prfResultado) {
+        prfResultado.innerHTML = mensajeResultado()
+    }
+}
+
+function mensajeResultado() : Resultado{
+    if(barajaJugador < 4){
+        return "Has sido muy conservador"
+    } else if(barajaJugador ==  5){
+        return "Te ha entrado el canguelo eh?"
+    } else if(barajaJugador ==  6 || barajaJugador ==  7){
+        return "Casi"
+    } else if(barajaJugador ==  7.5){
+        return "¡Lo has clavado! ¡Enhorabuena!"
+    } else {
+        return "Número de carta indefinido"
     }
 }
 
