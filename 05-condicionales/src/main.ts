@@ -98,7 +98,7 @@ function plantarsePartida() {
 
 
 ///-----------------------------
-
+// Crea un numero aleatorio entre el 1 y el 10
 function crearNumeroAleatorio(): number {
     return Math.floor(Math.random()*(11-1)+1);
 }
@@ -166,6 +166,11 @@ function pintarContador(contadorActualizado:number) : void{
 }
 
 function comprobarPartida() :string {
+    // meter el return en finalizar partida 
+    //y solo llamar a finalizar partida en > 7.5 y === 7.5
+    // si <7.5 seguir jugando
+    // se volverá a llamar a finalizar partida en la funcion plantarse
+   
     if (contadorJugador > 7.5) {
         btnCogerCartaActivado(false)
         btnInicioActivado(true)

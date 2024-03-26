@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="app">
+        <div class="zonaMazo" id="zonaMazo">
+          <p id="txtCogeCarta"></p>
+          <div class="mazo" id="mazo">
+            <img class="imgMazo" src="https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/back.jpg" alt="">
+            <img class="imgMazo" src="https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/back.jpg" alt="">
+            <img id="cogerCarta" class="imgMazo" src="https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/back.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="zonaJuego">
+          <div id="titulo">
+            <h1>Siete y medio</h1>
+            <button id="inicio">Comenzar a jugar</button>
+          </div>
+          
+          <div class="puntuacion">
+            <p id="numero"></p>
+            <button id="plantarse">Plantarse</button>
+            <button id="reset">Resetear</button>
+            <h2 id="resultado"></h2>
+          </div>
+          
+          <div class="zonaJuegoJugador">
+            <div id="barajaJugador"></div>
+          </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
