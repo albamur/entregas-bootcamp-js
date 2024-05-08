@@ -89,7 +89,7 @@ button:focus-visible {
 }
 
 .wrapper {
-  display: grid;
+  display: none;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 15px;
 
@@ -144,13 +144,32 @@ button:focus-visible {
   padding: 10px;
 }
 
-.clicked .front {
+.card:hover {
+  transform: scale(1.04);
+}
+
+.card[data-estado='selected'] .front {
   transform: rotateY(180deg);
 }
 
-.clicked .back {
+.card[data-estado='selected'] .back {
   transform: rotateY(360deg);
+ 
 }
+
+.card[data-estado='completed'] .front {
+  animation-name: spin1;
+  animation-duration: 3.5s;
+  animation-timing-function: cubic-bezier(0.1, 0.7, 0.1);
+}
+
+
+@keyframes spin1 {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
 
 .card div img {
   width: 100%;
@@ -159,6 +178,14 @@ button:focus-visible {
 .btnEmpezarPartida {
   margin: 20px;
 }
+
+.mensaje {
+  padding-bottom: 20px;
+  height: 30px;
+  color: rgba(255, 234, 0, 0.976);
+}
+
+
 
 @media (prefers-color-scheme: light) {
   :root {
