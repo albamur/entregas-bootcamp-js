@@ -79,7 +79,15 @@ export const clickCarta = (tablero: Tablero, i: number,  carta : Element, array:
         }, 1000);
 
         setTimeout(() => {
+            ocultarMensaje()
             cartasBocaAbajo(array)
+            const tableroUI = document.getElementById("cards")
+
+            if (tableroUI && tableroUI instanceof HTMLDivElement){
+                tableroUI.style.display = "none"
+            }
+
+            resetearIntentos()
         }, 4000);
     }
 }
@@ -159,6 +167,14 @@ const cartasGiratoriasAnimacion = (cartas: Element[]): void => {
 //* 5. Intentos
 const actualizarIntentos = (): void => {
     tablero.intentos++
+    const intentos = document.getElementById('intentos');
+    if (intentos && intentos instanceof HTMLSpanElement) {
+        intentos.textContent = tablero.intentos.toString();
+    }
+};
+
+const resetearIntentos = (): void => {
+    tablero.intentos = 0
     const intentos = document.getElementById('intentos');
     if (intentos && intentos instanceof HTMLSpanElement) {
         intentos.textContent = tablero.intentos.toString();
