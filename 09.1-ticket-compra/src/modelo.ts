@@ -1,4 +1,3 @@
-
 export type TipoIva =
   | "general"
   | "reducido"
@@ -7,9 +6,7 @@ export type TipoIva =
   | "superreducidoC"
   | "sinIva";
 
-
-
-interface Producto {
+export interface Producto {
   nombre: string;
   precio: number;
   tipoIva: TipoIva;
@@ -20,6 +17,35 @@ export interface LineaTicket {
   cantidad: number;
 }
 
+// MODELO PARA UI
+export interface ResultadoLineaTicket {
+  nombre: string;
+  cantidad: number;
+  precioSinIva: number;
+  tipoIva: TipoIva;
+  precioConIva: number;
+}
+
+
+
+export interface ResultadoTotalTicket {
+  totalSinIva: number;
+  totalConIva: number;
+  totalIva: number;
+}
+
+export interface TotalPorTipoIva {
+  tipoIva: TipoIva;
+  cuantia : number;
+}
+
+export interface TicketFinal {
+  lineas: ResultadoLineaTicket[];
+  total: ResultadoTotalTicket;
+  desgloseIva: TotalPorTipoIva[];
+}
+
+
 export const productos: LineaTicket[] = [
   {
     producto: {
@@ -27,7 +53,7 @@ export const productos: LineaTicket[] = [
       precio: 2,
       tipoIva: "general",
     },
-    cantidad: 2,
+    cantidad: 5,
   },
   {
     producto: {
@@ -55,82 +81,11 @@ export const productos: LineaTicket[] = [
   },
 ];
 
-//CREAR ESTA UNA FUNCION QUE RELLENE DIRECTAMENTE ESTA INTERFACE EN VEZ DE HACERLO MANUALMENTE POR UI
-
-export interface ResultadoLineaTicket {
-  nombre: string;
-  cantidad: number;
-  precioSinIva: number;
-  tipoIva: TipoIva;
-  precioConIva: number;
-}
-
-export interface ResultadoTotalTicket {
-  totalSinIva: number;
-  totalConIva: number;
-  totalIva: number;
-}
-
-export interface TotalPorTipoIva {
-  tipoIva: TipoIva;
-  cuantia : number;
-}
-/*
-interface TicketFinal {
-  lineas: ResultadoLineaTicket[];
-  total: ResultadoTotalTicket;
-  desgloseIva: TotalPorTipoIva[];
-}
-
-
-
-
-
-
-/*
-const crearTicketFinal = (): TicketFinal => ({
-  lineas: ResultadoLineaTicket[],
-  total: ResultadoTotalTicket;
-  desgloseIva: TotalPorTipoIva[];
-});
-*/
-
-//export let ticket: TicketFinal = crearTicketFinal();
-
-
-
-export interface Iva {
-    tipo: TipoIva;
-    porcentaje: number;
-}
-export const arrayIvas: Iva[] = [
-    {
-        tipo: 'general',
-        porcentaje: 21
-    },
-    {
-        tipo: 'reducido',
-        porcentaje: 10
-    },
-    {
-        tipo: 'superreducidoA',
-        porcentaje: 5
-    },
-    {
-        tipo: 'superreducidoB',
-        porcentaje: 4
-    },
-    {
-        tipo: 'superreducidoC',
-        porcentaje: 0
-    },
-    {
-        tipo: 'sinIva',
-        porcentaje: 0
-    }
-]
-
-export let resultadosLineaTicket : ResultadoLineaTicket[] = []
-
-export let resultadosTotalesPorTipoIva : TotalPorTipoIva[] = []
-export let listaDeTiposIvas: TipoIva [] = ['general','reducido','sinIva','superreducidoA','superreducidoB','superreducidoC'];
+export const porcentajeIva = {
+  general: 21,
+  reducido: 10,
+  superreducidoA: 5,
+  superreducidoB: 4,
+  superreducidoC: 0,
+  sinIva: 0,
+};

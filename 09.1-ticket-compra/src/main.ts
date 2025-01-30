@@ -1,28 +1,18 @@
-import { crearResultadoLineaTicket } from "./linea";
-import { LineaTicket, TotalPorTipoIva, listaDeTiposIvas, productos, resultadosLineaTicket } from "./modelo";
-import { crearResultadoTotalTicket } from "./total";
-import { crearResultadoTotalPorTipoIva } from "./totaltipoiva";
+//modelo
+import {  productos,
+    TicketFinal
+ } from "./modelo";
+
+import { calculaTicket } from "./motor";
 
 
 
-const calculaTicket = (lineasTicket: LineaTicket[]) :void => {
-    for (let i = 0; i < lineasTicket.length; i++) {
-        let element = lineasTicket[i]
-        resultadosLineaTicket.push(crearResultadoLineaTicket(element));
-    }
-    
-};
-calculaTicket(productos)
+
+///La estructura inicial de la función para calcular el ticket sería la siguiente:
 
 
-crearResultadoTotalTicket(resultadosLineaTicket)
+console.log('Ejercicio Ticket Compra')
+const ticketFinal: TicketFinal = calculaTicket(productos)
+console.log(ticketFinal)
 
 
-const calculaResultadoTotalPorTipoIva = (resultadosTotalesPorTipoIva : TotalPorTipoIva[]) :void => {
-    for (let i = 0; i < resultadosTotalesPorTipoIva.length; i++) {
-        let element = resultadosTotalesPorTipoIva[i]
-        resultadosTotalesPorTipoIva.push(crearResultadoTotalPorTipoIva(element.tipoIva,listaDeTiposIvas));
-    }
-    
-};
-calculaResultadoTotalPorTipoIva(productos)

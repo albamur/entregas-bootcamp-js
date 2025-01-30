@@ -1,20 +1,17 @@
 
-export const plantillaTicket = (articulos:string, total: number) => {
-    return `
-------------------------- TICKET -------------------------
-Artículo                                      PVP    Cant
-`+articulos+`
 
+export const pintarLinea = (table: string, array: string[]) => {    
+    const tabla = document.getElementById(table) as HTMLDivElement
+    const linea = document.createElement('div') as HTMLDivElement
+    linea.setAttribute('class','card-table-line')
 
-TOTAL                                                 ${total}€
+    for (let i = 0; i < 5; i++) {
+        const celda = document.createElement('p') 
+        celda.setAttribute('class', 'line-product')
+        celda.innerHTML = array[i]
+        linea.appendChild(celda)
+    }
 
-                ---------- IVA INCLUIDO ---------
-Tipo de IVA      Tasa      Base Imp.       Val         Val Total
-General          21,00%    24,78           5,20        29,80
-Reducido         10,00%
-Superreducido A  5,00%
-Superreducido B  4,00%
-Superreducido C  0,00%
-Sin IVA	         0,00%
-`
+    tabla.appendChild(linea)
 }
+

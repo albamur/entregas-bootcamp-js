@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <div id="app">
-      <h1>TypeScript Sandbox</h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/style.css">
+  <title>Vite + TS</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="card">
+      <div class="card-content">
+        <h3 class="card-title" id="title">Ticket Compra</h3>
+        <div class="card-table-products card-table" id="table-products">
+          <div class="card-table-header" id="header">
+            <p class="line-header" id="line-header-producto">Producto</p>
+            <p class="line-header" id="line-header-cantidad">Cantidad</p>
+            <p class="line-header" id="line-header-sin-iva">€ sin IVA</p>
+            <p class="line-header" id="line-header-tipo-iva">Tipo IVA</p>
+            <p class="line-header" id="line-header-con-iva">€ con Iva</p>
+          </div>
+        
+        </div>
+        <div class="card-table-totals card-table" id="table-totals">
+          <div class="card-table-header" id="header">
+            <p class="line-header" id="line-header-producto">Tipo IVA</p>
+            <p class="line-header" id="line-header-cantidad"></p>
+            <p class="line-header" id="line-header-sin-iva">Total sin IVA</p>
+            <p class="line-header" id="line-header-tipo-iva">Total IVA</p>
+            <p class="line-header" id="line-header-con-iva">Total con Iva</p>
+          </div>
+        
+        </div>
+      </div>
     </div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>

@@ -95,3 +95,56 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+
+.card {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0px;
+  border-bottom: 1px solid rgba(177, 177, 177, 0.692);
+  border-top: 1px solid rgba(177, 177, 177, 0.692);
+  border-style: dashed ;
+  overflow: hidden;
+  width: 650px;
+
+  background-color: #fff;
+}
+
+.card-title {
+  height: 20px;
+  margin: 0;
+  color: black;
+}
+
+.card-table {
+  margin-top: 20px;
+}
+
+.card-table-line, .card-table-header{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+
+.line-product{
+  color: #777;
+  margin: 10px 0 20px;
+}
+
+.line-header {
+  color: black;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
